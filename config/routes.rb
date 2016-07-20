@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'user_details/index'
+
+  get 'user_details/show'
+
   get 'items/index'
 
   get 'items/show'
