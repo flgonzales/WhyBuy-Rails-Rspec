@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "validations" do
+    it { validate_inclusion_of (:name) }
+    it { validate_inclusion_of (:description) }
+    it { validate_inclusion_of (:user_id) }
+  end
 end
