@@ -10,13 +10,14 @@
   <%= @item.name %>
 </h1>
 
-<div font-color: grey>
-<h3 >This item is <%= @item.available %> <i class="fa fa-toggle-on"></i> </h3>
+<div>
+<h3 style="color:green">This item is <%= @item.available %> <i class="fa fa-toggle-on"></i> </h3>
 </div>
 
-<div>
-  <%= @item.available ? '<i class="fa fa-toggle-on"></i>' : '<i class="fa fa-toggle-off"></i>' %>
-</div>
+<!--<div>
+  <h3 style="color:green"> <%=
+  "#{toggle_btn(@item.available)}" %> </h3>
+</div>-->
 
 <p><%= @item.description %></p>
 
