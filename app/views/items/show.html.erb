@@ -1,2 +1,28 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+<h1>
+  <%= @item.name %>
+</h1>
+
+<div font-color: grey>
+<h3 >This item is <%= @item.available %> <i class="fa fa-toggle-on"></i> </h3>
+</div>
+
+<div>
+  <%= @item.available ? '<i class="fa fa-toggle-on"></i>' : '<i class="fa fa-toggle-off"></i>' %>
+</div>
+
+<p><%= @item.description %></p>
+
+<div>
+  <br/>
+  <br/>
+  <%= link_to 'Return', items_path %>
+</body>
+</html>
