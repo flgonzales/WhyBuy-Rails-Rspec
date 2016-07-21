@@ -7,9 +7,8 @@ RSpec.describe Action, type: :model do
     it { validate_inclusion_of (:owner) }
   end
   describe "relations" do
-    it { is_expected.to have_many(:user_id)}
-    it { is_expected.to have_many(:item_id)}
-    it { is_expected.to have_many(:owner)}
+    it { is_expected.to belong_to (:user)}
+    it { is_expected.to belong_to (:item)}
   end
-  
+
 end
