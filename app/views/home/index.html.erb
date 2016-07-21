@@ -1,9 +1,34 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<p> test </p>
+<h1>Why Buy if you lend and borrow?</h1>
+
+<div>
+  <i class="fa fa-users"></i>
+</div>
 <div>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
   <%= yield %>
   <p><%= current_user.email %></p>
+  <%= link_to('Items', items_path)%>
+  <br/>
+</div>
+<br/>
+<div>
+  <% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>
+  </li>
+<% end %>
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Edit registration', edit_user_registration_path) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Register', new_user_registration_path)  %>
+  </li>
+<% end %>
 </div>
