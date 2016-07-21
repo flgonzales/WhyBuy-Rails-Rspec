@@ -58,3 +58,4 @@ group :development do
   gem 'terminal-notifier-guard'
 end
 gem 'devise'
+gem 'bootstrap-sass', '~> 3.3.6'
