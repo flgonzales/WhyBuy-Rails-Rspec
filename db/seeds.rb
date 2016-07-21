@@ -10,6 +10,8 @@
 
 micha = User.create(email: "micha@mail.com",password: "password",)
 
+mike = User.create(email: "mike@mail.com",password: "password",)
+
 alice = User.create(email:"alice@mail.com", password: "password")
 
 Item.destroy_all
@@ -27,6 +29,6 @@ Action.create(user_id: micha.id, item_id: drill.id, owner: alice.id)
 
 
 
-UserDetail.delete_all
+#UserDetail.delete_all
 
 UserDetail.create(name_first: "micha", name_last: "Bright", username: "Madmicha", zipcode: "3417gp", address_st:"heeswijk", address_hno: "187", city:"Montfoort", user_id: micha.id)
