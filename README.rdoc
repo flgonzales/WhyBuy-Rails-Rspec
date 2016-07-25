@@ -3,6 +3,15 @@ UNDER CONSTRUCTION
 
 A Share Economy platform to share objects and tools.
 
+──────────────────────────────────────────────────────
+Last exercise during Codaisseur's BootCamp.
+
+
+The requirements for the Application were:
+
+Create an application using Ruby on Rails to share objects.
+
+──────────────────────────────────────────────────────
 
 == README
 
