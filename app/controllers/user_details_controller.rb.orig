@@ -1,0 +1,20 @@
+<<<<<<< HEAD
+class UserDetailsController < ApplicationController
+  def index
+    @user_detail = UserDetail
+  end
+
+  def show
+  end
+end
+||||||| merged common ancestors
+=======
+class UserDetailsController < ApplicationController
+  def index
+    @user_detail = current_user
+  end
+
+  def show
+  end
+end
+>>>>>>> b7f9a91b6eeeb480183cd14b31bc4cc53ff23e3f
