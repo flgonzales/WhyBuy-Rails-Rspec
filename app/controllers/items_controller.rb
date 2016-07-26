@@ -27,5 +27,6 @@ before_action :authenticate_user!
   end
 
   def item_params
-    params.require(:item).permit(:)
+    params.require(:name, :description, :user_id).permit(:available, :start_avail, :finish_avail)
+  end
 end
