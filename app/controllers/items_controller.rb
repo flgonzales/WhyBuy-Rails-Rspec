@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
-before_action :authenticate_user!
+  before_action :authenticate_user!
+  before_action :set_item, only: [:show, :update, :destroy]
+
   def index
     @items = Item.order(name: :asc)
-
   end
 
   def show
@@ -19,6 +20,8 @@ before_action :authenticate_user!
     redirect_to items_path, notice: 'Item was removed with sucess.'
   end
 
+  def edit
+  end
 
   private
 
