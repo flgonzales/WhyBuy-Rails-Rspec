@@ -1,0 +1,9 @@
+<<<<<<< HEAD
+<h1><%= User Details "#{current_user}" %></h1>
+
+<%= render @user_detail %>
+||||||| merged common ancestors
+=======
+<h1><%= User Details "#{current_user.email}" %></h1>
+<%= render @user_detail %>
+>>>>>>> b7f9a91b6eeeb480183cd14b31bc4cc53ff23e3f
