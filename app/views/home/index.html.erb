@@ -9,36 +9,33 @@
 <h1 ><i style="color:grey" class="fa fa-users"></i> Why Buy if you can lend it and borrow it? <i style="color:grey" class="fa fa-users"></i></h1>
 
 <div>
-  <p class="notice"><%= notice %></p>
-  <p#class="alert"><%= alert %></p>
+  <p style="color:darkred" class="notice"><%= notice %></p>
+  <p  class="alert" style="color:red"><%= alert %></p>
   <%= yield %>
-  <p><%= current_user.email %></p>
-  <h3>Available Items</h3>
-  <div id="available_items">
-  </div>
-  <%= link_to('Items', items_path, class: "btn btn-primary")%>
+  <p><%= signed_in? ? current_user.email : ""%></p>
+  <ul>
+    <h3>Available Items</h3>
+    <%= link_to('Items', items_path, class: "btn btn-primary")%>
+  </ul>
   <br/>
 </div>
 
 <br/>
 <div>
   <% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "btn btn-warning") %>
-  </li>
+  <ul>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete, class: "btn btn-warning") %>
+  </ul>
+  <ul>
+    <%= link_to('Edit Registration', edit_user_registration_path, class: "btn btn-info") %>
+  </ul>
 <% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path, class: "btn btn-primary")  %>
-  </li>
-<% end %>
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Edit Registration', edit_user_registration_path, class: "btn btn-info") %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Register', new_user_registration_path, class: "btn btn-info")  %>
-  </li>
+  <ul>
+    <%= link_to('Login', new_user_session_path, class: "btn btn-primary")  %>
+  </ul>
+  <ul>
+    <%= link_to('Register', new_user_registration_path, class: "btn btn-info")  %>
+  </ul>
 <% end %>
 </div>
 </body>
