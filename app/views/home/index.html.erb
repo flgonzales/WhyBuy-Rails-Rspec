@@ -13,32 +13,31 @@
   <p#class="alert"><%= alert %></p>
   <%= yield %>
   <p><%= current_user.email %></p>
-  <%= link_to('Items', items_path), class: "btn btn-primary"%>
+  <h3>Available Items</h3>
+  <div id="available_items">
+  </div>
+  <%= link_to('Items', items_path, class: "btn btn-primary")%>
   <br/>
-</div>
-
-<h3>Available Items</h3>
-<div id="available_items">
 </div>
 
 <br/>
 <div>
   <% if user_signed_in? %>
   <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete, class: "btn btn-warning") %>
   </li>
 <% else %>
   <li>
-  <%= link_to('Login', new_user_session_path)  %>
+  <%= link_to('Login', new_user_session_path, class: "btn btn-primary")  %>
   </li>
 <% end %>
 <% if user_signed_in? %>
   <li>
-  <%= link_to('Edit registration', edit_user_registration_path) %>
+  <%= link_to('Edit Registration', edit_user_registration_path, class: "btn btn-info") %>
   </li>
 <% else %>
   <li>
-  <%= link_to('Register', new_user_registration_path)  %>
+  <%= link_to('Register', new_user_registration_path, class: "btn btn-info")  %>
   </li>
 <% end %>
 </div>
