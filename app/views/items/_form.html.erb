@@ -1,4 +1,3 @@
-<div>
   <%= form_for (@item) do |f| %>
     <% if @item.errors.any? %>
       <div id="error_explanation">
@@ -12,7 +11,7 @@
     </div>
   <% end %>
 
-  <%= f.hidden_field :user_id, :value => @item.user.id%>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <div class="form-group">
     <div class="field">
       <%= f.label :name %><br/>
@@ -24,21 +23,22 @@
       <%= f.text_area :description, size: "48x6" %>
     </div>
     <div class="checkbox">
-      <%= f.label "Make it available"  %><br/>
+      <%= f.label :available  %><br/>
       <%= f.check_box :available %>
     </div>
     <div class="date">
-      <%= f.label "Start date to post item" %><br/>
+      <%= f.label :start_avail %><br/>
       <%= f.date_field :start_avail %>
     </div>
     <div class="date">
-      <%= f.label "Keep item posted until" %><br/>
+      <%= f.label :finish_avail %><br/>
       <%= f.date_field :finish_avail %>
+      <%= @item.user_id %>
+      <%= current_user.id %>
     </div>
     <br/>
     <div class="btn">
-      <%= f.submit "Update" %>
+      <%= f.submit (@item.new_record? ? "Create" : "Update"), class: "form-control btn-primary" %>
     </div>
   </div>
   <% end %>
-</div>

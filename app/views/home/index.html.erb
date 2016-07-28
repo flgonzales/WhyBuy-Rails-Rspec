@@ -1,16 +1,26 @@
-<h1>Why Buy if you can lend it and borrow it?</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+<h1 ><i style="color:grey" class="fa fa-users"></i> Why Buy if you can lend it and borrow it? <i style="color:grey" class="fa fa-users"></i></h1>
 
 <div>
-  <i class="fa fa-users"></i>
-</div>
-<div>
   <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  <p#class="alert"><%= alert %></p>
   <%= yield %>
   <p><%= current_user.email %></p>
-  <%= link_to('Items', items_path)%>
+  <%= link_to('Items', items_path), class: "btn btn-primary"%>
   <br/>
 </div>
+
+<h3>Available Items</h3>
+<div id="available_items">
+</div>
+
 <br/>
 <div>
   <% if user_signed_in? %>
@@ -32,3 +42,4 @@
   </li>
 <% end %>
 </div>
+</body>
