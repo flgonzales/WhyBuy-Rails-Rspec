@@ -50,6 +50,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:available, :start_avail, :finish_avail)
+    params.require(:item).permit(:available, :start_avail, :finish_avail, :user_id, :name, :description)
   end
 end

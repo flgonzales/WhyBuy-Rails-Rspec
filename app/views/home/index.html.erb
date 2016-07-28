@@ -13,7 +13,7 @@
   <p#class="alert"><%= alert %></p>
   <%= yield %>
   <p><%= current_user.email %></p>
-  <%= link_to('Items', items_path)%>
+  <%= link_to('Items', items_path), class: "btn btn-primary"%>
   <br/>
 </div>
 
