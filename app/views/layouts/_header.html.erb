@@ -2,9 +2,14 @@
    <div class="container">
      <%= link_to "WhyBuy", '/', class: "navbar-brand" %>
      <nav>
-       <ul class="nav navbar-nav">
-         <li><%= link_to "Items", items_path %></li>
-       </ul>
+       <div class="row">
+         <ul class="nav navbar-nav">
+           <li><%= link_to "Items", items_path %></li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+           <%= signed_in? ? current_user.email : ""%>
+         </ul>
+      </div>
      </nav>
    </div>
  </header>

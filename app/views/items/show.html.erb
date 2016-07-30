@@ -6,29 +6,36 @@
 </head>
 
 <body>
-<h1>
-  <%= @item.name %>
-</h1>
+  <%= render 'layouts/header' %>
 
-<div>
-<h3 style="color:green">This item is <%= @item.available %> <i class="fa fa-toggle-on"></i> </h3>
-</div>
 
-<!--<div>
-  <h3 style="color:green"> <%=
-  "#{toggle_btn(@item.available)}" %> </h3>
-</div>-->
+  <main class="container">
+    <h1>
+      <%= @item.name %>
+    </h1>
 
-<p><%= @item.description %></p>
+    <div>
+    <h3 style="color:green">This item is <%= @item.available %> <i class="fa fa-toggle-on"></i> </h3>
+    </div>
 
-<div>
-  <br/>
-  <br/>
-  <%= render 'form' %>
-</div>
-<div>
-  <br/>
-  <br/>
-  <%= link_to 'Return', items_path, class: "btn btn-default", style: "float: left" %>
+    <div>
+      <% if @item.available? %>
+        <h3 style="color:green">This item is available <i class="fa fa-toggle-on"></i></h3>
+      <% else %>
+        <h3 style="color:darkred">This item is not available <i class="fa fa-toggle-off"></i></h3>
+    <% end %>
+    </div>
+    <p><%= @item.description %></p>
+
+    <div>
+      <br/>
+      <br/>
+      <%= render 'form' %>
+    </div>
+    <div>
+      <br/>
+      <br/>
+      <%= link_to 'Return', items_path, class: "btn btn-default", style: "float: left" %>
+    </main>
 </body>
 </html>
