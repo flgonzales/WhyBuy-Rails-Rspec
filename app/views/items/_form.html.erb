@@ -4,7 +4,7 @@
         <h2><%= pluralize(@item.errors.count, "error") %> prohibed this <strong>item<strong> to be saved.</h2>
 
       <ul>
-        <% @song.errors.full_messages.each do |message| %>
+        <% @item.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>

@@ -1,3 +1,7 @@
+<%= render 'layouts/header' %>
+
+
+<main class="container">
 <h1>Items - complete list</h1>
 
 <% @items.each do |item| %>
@@ -9,6 +13,7 @@
 <br/>
 <br/>
 <div>
-  <%= link_to 'Home', root_path %>
-  <%= link_to 'New Item', new_item_path %>
+  <%= link_to 'Home', root_path, class: "btn btn-primary" %>
+  <%= link_to 'New Item', new_item_path, class: "btn btn-primary" %>
 </div>
+</main>

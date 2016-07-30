@@ -14,7 +14,7 @@
   <%= yield %>
   <p><%= signed_in? ? current_user.email : ""%></p>
   <ul>
-    <h3>Available Items</h3>
+    <h3 class="Available Items">Available Items</h3>
     <%= link_to('Items', items_path, class: "btn btn-primary")%>
   </ul>
   <br/>

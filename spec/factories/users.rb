@@ -1,8 +1,8 @@
 require 'faker'
 
 FactoryGirl.define do
-  factory :user do |f|
-    f.email { Faker::Email}
-    f.password { Faker::Password}
+  factory :user do
+    email { Faker::Email.email}
+    password { Faker::Password.password}
   end
 end
