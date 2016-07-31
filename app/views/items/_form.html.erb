@@ -28,6 +28,10 @@
       <%= f.check_box :available %>
       <br/>
     </div>
+    <div>
+      <%= f.label :image %><br/>
+      <%= f.file_field :image %>
+    </div>
     <div class="form-group">
       <%= f.label :start_avail %><br/>
       <%= f.date_field :start_avail %>
@@ -35,8 +39,7 @@
     <div class="date">
       <%= f.label :finish_avail %><br/>
       <%= f.date_field :finish_avail %>
-      <%= @item.user_id %>
-      <%= current_user.id %>
+
     </div>
     <br/>
     <div class="btn">

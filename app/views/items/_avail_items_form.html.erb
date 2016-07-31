@@ -1,0 +1,21 @@
+<%= form_for (@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibed this <strong>item<strong> to be saved.</h2>
+
+    <ul>
+      <% @item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= f.hidden_field :user_id, value: current_user.id %>
+<% @available_items.each do |item_a|%>
+<div>
+  <h4><%= link_to item_a.name, item_a %></h4>
+</div>
+<% end %>
+
+<% end %>
