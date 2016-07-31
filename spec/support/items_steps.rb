@@ -5,7 +5,7 @@ module ItemsSteps
 
   def create_complete_items_with_description(description)
     check("item_available")
-    create_incomplete_items_with_description(desdescription)
+    create_incomplete_items_with_description(description)
   end
 
   def create_incomplete_items_with_description(description)

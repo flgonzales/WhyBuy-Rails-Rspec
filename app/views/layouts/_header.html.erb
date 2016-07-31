@@ -1,0 +1,15 @@
+<header class="navbar navbar-fixed-top navbar-default">
+   <div class="container">
+     <%= link_to "WhyBuy", '/', class: "navbar-brand" %>
+     <nav>
+       <div class="row">
+         <ul class="nav navbar-nav">
+           <li><%= link_to "Items", items_path %></li>
+         </ul>
+         <ul class="nav navbar-nav navbar-right">
+           <span class="navbar-text"><%= signed_in? ? current_user.email : ""%></span>
+         </ul>
+      </div>
+     </nav>
+   </div>
+ </header>

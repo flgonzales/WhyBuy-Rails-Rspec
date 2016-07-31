@@ -1,10 +1,11 @@
+
   <%= form_for (@item) do |f| %>
     <% if @item.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@item.errors.count, "error") %> prohibed this <strong>item<strong> to be saved.</h2>
 
       <ul>
-        <% @song.errors.full_messages.each do |message| %>
+        <% @item.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -22,8 +23,8 @@
       <%= f.label :description %><br/>
       <%= f.text_area :description, size: "48x6" %>
     </div>
-    <div class="checkbox">
-      <%= f.label :available  %><br/>
+    <div class="checkbox-inline">
+      <%= f.label :available  %>
       <%= f.check_box :available %>
     </div>
     <div class="date">

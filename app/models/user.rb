@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
   has_many :items
   has_one :user_detail
   has_many :actions
+  def handle
+    self.email.split('@') [0]
+  end
 end

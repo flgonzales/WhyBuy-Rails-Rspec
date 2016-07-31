@@ -1,3 +1,15 @@
+<%= render 'layouts/header' %>
+
+
+<main class="container">
+  <div>
+    <%= link_to 'Home', root_path, class: "btn btn-primary" %>
+    <% if user_signed_in? %>
+      <%= link_to 'New Item', new_item_path, class: "btn btn-primary" %>
+      <br/>
+    <% end %>
+  </div>
+  <br/>
 <h1>Items - complete list</h1>
 
 <% @items.each do |item| %>
@@ -6,9 +18,5 @@
     <h5><%= item.description %></h5>
   </div>
 <% end %>
-<br/>
-<br/>
-<div>
-  <%= link_to 'Home', root_path %>
-  <%= link_to 'New Item', new_item_path %>
-</div>
+
+</main>
