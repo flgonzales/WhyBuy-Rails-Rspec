@@ -22,11 +22,15 @@
     <% end %>
     </div>
     <p><%= @item.description %></p>
-
+    <p>Owner: <%= @item.user.handle.capitalize %></p>
     <div>
       <br/>
       <br/>
-      <%= render 'form' %>
+      <% if @item.user_id == current_user.id? %>
+        <%= render 'form' %>
+      <% else %>
+        <p>are you interested?</p>
+      <% end %>
     </div>
     <div>
       <br/>

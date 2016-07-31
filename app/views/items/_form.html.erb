@@ -23,11 +23,12 @@
       <%= f.label :description %><br/>
       <%= f.text_area :description, size: "48x6" %>
     </div>
-    <div class="checkbox-inline">
-      <%= f.label :available  %>
+    <div class="checkbox">
+      <%= f.label :available %>
       <%= f.check_box :available %>
+      <br/>
     </div>
-    <div class="date">
+    <div class="form-group">
       <%= f.label :start_avail %><br/>
       <%= f.date_field :start_avail %>
     </div>
