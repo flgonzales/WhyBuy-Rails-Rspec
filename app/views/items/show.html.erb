@@ -25,7 +25,7 @@
     <p>Owner: <%= @item.user.handle.capitalize %></p>
     <div>
     <div>
-      <%= image_tag @item.image_url.to_s %>
+      <%= image_tag (item.image.thumbnail_url, class:"thumbnail inline" %>
     </div>
       <br/>
       <br/>
