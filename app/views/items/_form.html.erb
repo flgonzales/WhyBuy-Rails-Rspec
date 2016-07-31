@@ -15,7 +15,7 @@
   <%= f.hidden_field :user_id, value: current_user.id %>
   <div class="form-group">
     <div class="field">
-      <%= f.label :name %><br/>
+      <%= f.label :name %>
       <%= f.text_field :name %>
     </div>
     <br/>
@@ -26,24 +26,28 @@
     <div class="checkbox">
       <%= f.label :available %>
       <%= f.check_box :available %>
-      <br/>
+
     </div>
     <div>
+      <br/>
       <%= f.label :image %><br/>
       <%= f.file_field :image %>
+
     </div>
-    <div class="form-group">
-      <%= f.label :start_avail %><br/>
+    <div class="date">
+      <br/>
+      <%= f.label "Available from" %>
       <%= f.date_field :start_avail %>
     </div>
     <div class="date">
-      <%= f.label :finish_avail %><br/>
+      <%= f.label "Available until" %>
       <%= f.date_field :finish_avail %>
 
     </div>
     <br/>
-    <div class="btn">
-      <%= f.submit (@item.new_record? ? "Create" : "Update"), class: "form-control btn-primary" %>
+    <div class="btn-group">
+      <%= link_to 'Return', items_path, class: "btn btn-default"%>
+      <%= f.submit (@item.new_record? ? "Create" : "Update"), class: "btn btn-primary"%>
     </div>
   </div>
   <% end %>

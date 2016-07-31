@@ -24,9 +24,9 @@
     <p><%= @item.description %></p>
     <p>Owner: <%= @item.user.handle.capitalize %></p>
     <div>
-    <div>
-      <%= image_tag @item.image_url.to_s %>
-    </div>
+    <!--<div>
+      < image_tag (item.image.thumbnail_url, class:"thumbnail inline" >
+    </div>-->
       <br/>
       <br/>
       <% if @item.user_id = current_user.id? %>
@@ -35,10 +35,6 @@
         <p>are you interested?</p>
       <% end %>
     </div>
-    <div>
-      <br/>
-      <br/>
-      <%= link_to 'Return', items_path, class: "btn btn-default", style: "float: left" %>
     </main>
 </body>
 </html>
