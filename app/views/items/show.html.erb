@@ -15,10 +15,6 @@
     </h1>
 
     <div>
-    <h3 style="color:green">This item is <%= @item.available %> <i class="fa fa-toggle-on"></i> </h3>
-    </div>
-
-    <div>
       <% if @item.available? %>
         <h3 style="color:green">This item is available <i class="fa fa-toggle-on"></i></h3>
       <% else %>

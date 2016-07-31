@@ -7,7 +7,7 @@
            <li><%= link_to "Items", items_path %></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
-           <%= signed_in? ? current_user.email : ""%>
+           <span class="navbar-text"><%= signed_in? ? current_user.email : ""%></span>
          </ul>
       </div>
      </nav>
