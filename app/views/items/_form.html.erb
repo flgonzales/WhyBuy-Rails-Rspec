@@ -42,8 +42,9 @@
 
     </div>
     <br/>
-    <div class="btn">
-      <%= f.submit (@item.new_record? ? "Create" : "Update"), class: "form-control btn-primary" %>
+    <div class="btn-group">
+      <%= link_to 'Return', items_path, class: "btn btn-default", style: "float: left" %>
+      <%= f.submit (@item.new_record? ? "Create" : "Update"), class: "btn btn-primary", style: "float: left" %>
     </div>
   </div>
   <% end %>
