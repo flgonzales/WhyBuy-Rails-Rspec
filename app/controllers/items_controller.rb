@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_item, only: [:show, :update, :destroy]
+  # before_action :set_item, only: [:show, :update, :destroy]
 
   def index
     @items = Item.order(name: :asc)
@@ -30,18 +30,26 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
-    @item.update(item_params)
-    redirect_to @item
+    @item = Item.find params[:id]
+    respond_to do |format|
+      if @item.update(item_params)
+        format.html {redirect_to @item, notice: 'Item was updated.'}
+      else
+        format.html {render :edit }
+      end
+    end
   end
 
   def destroy
     @item.destroy
-    redirect_to items_path, notice: 'Item was removed with sucess.'
+    redirect_to items_path, notice: 'Item was removed with success.'
   end
 
-  def edit
-  end
+
 
   private
 
@@ -50,6 +58,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:available, :start_avail, :finish_avail, :user_id, :name, :description, :image)
+    params.require(:item).permit(:user_id, :name, :description, :image, :available, :start_avail, :finish_avail)
   end
 end

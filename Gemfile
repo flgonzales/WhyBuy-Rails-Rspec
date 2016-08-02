@@ -59,6 +59,7 @@ group :development do
   gem 'spring-commands-rspec'
   gem 'rb-fsevent'
   gem 'terminal-notifier-guard'
+  gem 'annotate'
 end
 gem 'devise'
 gem 'carrierwave'
