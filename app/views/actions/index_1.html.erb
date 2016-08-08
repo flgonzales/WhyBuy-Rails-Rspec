@@ -1,0 +1,14 @@
+<%= render 'layouts/header' %>
+
+
+<main class="container">
+<h1> Reservations of Items</h1>
+
+
+    <% @actions.each do |action| %>
+      <%= action.user_id %>
+      <%= action.item_id %>
+      <%= action.owner %>
+    <% end %>
+
+</main>

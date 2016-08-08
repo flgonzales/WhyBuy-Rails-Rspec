@@ -5,16 +5,16 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
-  resources :items
+  resources :items, :actions
 
-  resources :actions
-  # , only: [:index, :show, :new, :create, :edit, :update, :destroy]
 
   devise_for :users
   get 'user_items/:user_id' => 'items#user', as: :user_items
 
 
   root 'home#index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
