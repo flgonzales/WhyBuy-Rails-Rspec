@@ -12,10 +12,11 @@
   <p style="color:darkred" class="notice"><%= notice %></p>
   <p  class="alert" style="color:red"><%= alert %></p>
   <%= yield %>
-  
+
   <ul>
     <h3 class="Available Items">Available Items</h3>
     <%= link_to('Items', items_path, class: "btn btn-primary")%>
+    <%= link_to('Actions', actions_path, class: "btn btn-info")%>
   </ul>
   <br/>
 </div>

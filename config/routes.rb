@@ -1,16 +1,20 @@
 Rails.application.routes.draw do
-  get 'items/index'
+  #get 'items/index'
 
-  get 'items/show'
+  #get 'items/show'
 
   get 'home/index'
+
+  resources :items, :actions
+
 
   devise_for :users
   get 'user_items/:user_id' => 'items#user', as: :user_items
 
-  resources :items
 
   root 'home#index'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
